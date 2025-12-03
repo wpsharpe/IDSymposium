@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Inequalities in Infectious Disease Dynamics: a Symposium and Workshop</title>
+  <style>
+    :root {
+      --bg: #f7f6f3;
+      --bg-alt: #ffffff;
+      --accent: #1f4e5f;
+      --accent-soft: #d1dde2;
+      --text-main: #222222;
+      --text-muted: #555555;
+      --border-soft: #e0ddd6;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: linear-gradient(135deg, #183743, #2b6174);
+      color: #ffffff;
+      padding: 2.5rem 1.5rem 2rem;
+      border-bottom: 6px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .site-label {
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 0.5rem;
+    }
+
+    .title {
+      font-size: clamp(1.9rem, 3vw, 2.3rem);
+      font-weight: 600;
+      margin: 0 0 0.75rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      max-width: 40rem;
+      opacity: 0.9;
+      margin-bottom: 1.3rem;
+    }
+
+    .header-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      align-items: flex-end;
+    }
+
+    .header-main {
+      flex: 1 1 260px;
+      min-width: 0;
+    }
+
+    .header-text {
+      flex: 1 1 260px;
+      min-width: 0;
+      max-width: 32rem;
+      padding-left: 1.5rem;
+      border-left: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .subtitle {
+      margin-bottom: 0;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      opacity: 0.95;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .meta-row .meta-item:last-child {
+      margin-left: auto;
+      text-align: right;
+    }
+
+    .meta-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    .meta-value {
+      font-weight: 500;
+    }
+
+    nav {
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1.5rem;
+      gap: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.92rem;
+    }
+
+    .nav-links a {
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+      border-color: var(--accent-soft);
+      background-color: #f0f5f7;
+      text-decoration: none;
+    }
+
+    .apply-button {
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      background-color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 0 0 1px rgba(24, 55, 67, 0.05);
+    }
+
+    .apply-button:hover {
+      background-color: #f4f6f8;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .content-section {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .content-section:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .content-section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .content-section p {
+      margin-top: 0.4rem;
+      color: var(--text-muted);
+      max-width: 40rem;
+    }
+
+    .content-section ul {
+      margin-top: 0.4rem;
+      padding-left: 1.2rem;
+      color: var(--text-muted);
+    }
+
+    .content-section li {
+      margin-bottom: 0.35rem;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 1.5rem;
+      align-self: flex-start;
+    }
+
+    .sidebar-card {
+      background-color: var(--bg-alt);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border-soft);
+      padding: 1.25rem 1.25rem 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+      font-size: 0.95rem;
+    }
+
+    .sidebar-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--accent);
+    }
+
+    .sidebar-item {
+      padding: 0.55rem 0;
+      border-top: 1px solid var(--border-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .sidebar-item:first-of-type {
+      border-top: none;
+    }
+
+    .sidebar-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .sidebar-value {
+      font-weight: 500;
+    }
+
+    .code-of-conduct-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.15rem;
+      font-weight: 500;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .sidebar {
+        position: static;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 2rem 1.1rem 1.6rem;
+      }
+
+      .nav-inner {
+        padding-inline: 1.1rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      main {
+        padding-inline: 1.1rem;
+      }
+
+      .header-layout {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-text {
+        max-width: 100%;
+        border-left: none;
+        padding-left: 0;
+        margin-top: 0.75rem;
+      }
+    }
+      /* Sidebar refinements to echo British Academy layout */
+    .sidebar-card {
+      background-color: #fbf9f4;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border-soft);
+      padding: 1.1rem 1.25rem 1rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+      font-size: 0.92rem;
+    }
+
+    .sidebar-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border-soft);
+      color: var(--text-main);
+    }
+
+    .sidebar-item {
+      padding: 0.55rem 0;
+      border-top: 1px solid var(--border-soft);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .sidebar-item:first-of-type {
+      border-top: none;
+    }
+
+    .sidebar-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .sidebar-value {
+      font-size: 0.9rem;
+      font-weight: 400;
+      text-align: right;
+    }
+
+    .code-of-conduct-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.15rem;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="site-label">London School of Hygiene &amp; Tropical Medicine</div>
+      <div class="header-layout">
+        <div class="header-main">
+          <h1 class="title">Social Inequalities in Infectious Disease Dynamics: a Symposium and Workshop</h1>
+        </div>
+        <div class="header-text">
+          <p class="subtitle">
+            We invite applications from researchers working at the intersection between social inequalities and infectious disease dynamics to attend a workshop and symposium at the London School of Hygiene &amp; Tropical Medicine.
+          </p>
+        </div>
+      </div>
+      <div class="meta-row" style="margin-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.25); padding-top: 0.75rem;">
+        <div class="meta-item">
+          <span class="meta-value">22–24 April 2026</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-value">London School of Hygiene &amp; Tropical Medicine, London, United Kingdom</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="#about">About the symposium</a>
+        <a href="#aims">Aims</a>
+        <a href="#eligibility">Eligibility and funding</a>
+        <a href="#key-speakers">Keynote speakers</a>
+        <a href="#applications">Applications</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="apply-button" onclick="document.getElementById('applications').scrollIntoView({ behavior: 'smooth' });">
+        View application details
+      </button>
+    </div>
+  </nav>
+
+    <main>
+    <aside class="sidebar" aria-label="Key information">
+      <div class="sidebar-card">
+        
+
+        <div class="sidebar-item">
+          <div class="sidebar-label">Applications open</div>
+          <div class="sidebar-value">[Date to be confirmed]</div>
+        </div>
+
+        <div class="sidebar-item">
+          <div class="sidebar-label">Applications close</div>
+          <div class="sidebar-value">[Date to be confirmed]</div>
+        </div>
+
+        <div class="sidebar-item">
+          <div class="sidebar-value">
+            <a class="code-of-conduct-link" href="code-of-conduct.html">
+              Code of conduct for attendees
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <section aria-label="Main content">
+            <section id="about" class="content-section">
+        <h2>About the symposium</h2>
+        <p>
+          We are hosting a 3-day symposium and workshop that will take place from 22–25 April 2025 at the London School of Hygiene &amp; Tropical Medicine, London, United Kingdom.
+        </p>
+        <p>
+          The meeting will bring together researchers and public health practitioners from all career stages to share ideas, discuss methods and issues, and reflect on the future direction of this field.
+        </p>
+        <p>
+          <strong>Day 1:</strong> Keynote presentations and invited talks from leading researchers.<br />
+          <strong>Days 2–3:</strong> Structured workshops and discussions in small groups and plenary sessions.
+        </p>
+        <p>
+          The programme will focus on conceptual, methodological, and applied perspectives on the inclusion of social factors in transmission modelling.
+        </p>
+      </section>
+
+            <section id="aims" class="content-section">
+        <h2>Aims</h2>
+        <p>
+          We aim to address conceptual, methodological, and applied perspectives on inclusion of social inequalities in models of infectious disease transmission.
+        </p>
+        <p>
+          Indicative aims and topics include:
+        </p>
+        <ul>
+          <li>Connecting theoretical frameworks on inequality with real-world data.</li>
+          <li>Exploring methods and technical aspects of designing models that incorporate social inequalities.</li>
+          <li>Addressing data challenges.</li>
+          <li>Identifying key data needs from policymakers and designing analyses for use and impact.</li>
+        </ul>
+        <p>
+          A detailed programme will be shared with confirmed participants closer to the event.
+        </p>
+      </section>
+
+                  <section id="key-speakers" class="content-section">
+        <h2>Keynote speakers</h2>
+        <p>
+          Details of confirmed keynote speakers and invited contributors will be published here closer to the event.
+        </p>
+      </section>
+
+                  <section id="eligibility" class="content-section">
+        <h2>Eligibility and funding</h2>
+        <p>
+          We invite researchers from all career stages to apply and will reserve a small number of places for early career researchers.
+        </p>
+        <p>
+          Applications will be evaluated based on a researcher's demonstrated interest in social inequalities and infectious disease dynamics. We are especially interested in applications from people who have current or very recent research projects in this area.
+        </p>
+        <p>
+          [Any other criteria for choosing attendees that we can be transparent about?]
+        </p>
+        <p>
+          The symposium can cover travel, accommodation, and visa costs.
+        </p>
+      </section>
+
+            <section id="applications" class="content-section">
+        <h2>Applications</h2>
+        <p>
+          Interested applicants are required to complete an online application form via [link] by [Date] 17:00 (GMT). We will notify successful applicants by [Date].
+        </p>
+        <p>
+          We ask that participants attend all three days of the symposium and that they read the Code of Conduct before applying.
+        </p>
+      </section>
+
+            <section id="contact" class="content-section">
+        <h2>Contact details</h2>
+        <p>
+          For questions about the symposium, accessibility, or application process please contact:
+        </p>
+        <p>
+          <strong>Email:</strong> <a href="mailto:xxx@lshtm.ac.uk">xxx@lshtm.ac.uk</a>
+        </p>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 London School of Hygiene &amp; Tropical Medicine. All details subject to change.
+  </footer>
+</body>
+</html>
